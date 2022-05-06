@@ -12,14 +12,16 @@ namespace Semana3Herencia
             {
                 nombre = "Fernando Lopez",
                 identidad = "0801",
-                carrera = "Diseño Web"
+                carrera = "Diseño Web",
+                peso = 190
 
             };
 
             Profesor p2 = new Profesor() {
                 nombre = "Carlo Ancheloti",
                 identidad = "0803",
-                carrera = "Futbol"
+                carrera = "Futbol",
+                peso = 200
             };
 
             Alumno a1 = new Alumno() {
@@ -56,6 +58,9 @@ namespace Semana3Herencia
             p1.ImpartirClases(10);
             p2.ImpartirClases(10);
 
+            p1.comer(2);
+            p2.comer(3);
+
             List<Alumno> La = new List<Alumno>();
             List<Profesor> Lp = new List<Profesor>();
 
@@ -76,6 +81,7 @@ namespace Semana3Herencia
             Lp.ForEach(delegate (Profesor x)
             {
                 Console.WriteLine(x.Saludar());
+                Console.WriteLine(x.peso);
             });
 
         }
