@@ -8,9 +8,19 @@ namespace Semana3Herencia
     {
         static void Main(string[] args)
         {
-            Profesor p1 = new Profesor("Fernando Lopez", "0801", "Diseño Web");
+            Profesor p1 = new Profesor()
+            {
+                nombre = "Fernando Lopez",
+                identidad = "0801",
+                carrera = "Diseño Web"
 
-            Profesor p2 = new Profesor("Carlo Ancheloti", "0803", "Futbol");
+            };
+
+            Profesor p2 = new Profesor() {
+                nombre = "Carlo Ancheloti",
+                identidad = "0803",
+                carrera = "Futbol"
+            };
 
             Alumno a1 = new Alumno() {
                 nombre = "Lia Marcela",
@@ -42,6 +52,9 @@ namespace Semana3Herencia
             for (int i = 0; i < 8; i++) {
                 a2.FaltarClase();
             }
+
+            p1.ImpartirClases(10);
+            p2.ImpartirClases(10);
 
             List<Alumno> La = new List<Alumno>();
             List<Profesor> Lp = new List<Profesor>();
