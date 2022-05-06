@@ -54,6 +54,17 @@ namespace Semana3Herencia
             Lp.Add(p1);
             Lp.Add(p2);
 
+            La.ForEach(delegate (Alumno x)
+            {
+                Console.WriteLine(x.GetReporteDerecho());
+
+            });
+
+            Lp.ForEach(delegate (Profesor x)
+            {
+                Console.WriteLine(x.Saludar());
+            });
+
         }
     }
 }
