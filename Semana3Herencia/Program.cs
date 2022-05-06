@@ -15,6 +15,18 @@ namespace Semana3Herencia
 
             Console.WriteLine(p1.GetNombre());
 
+            Alumno a1 = new Alumno() {
+                nombre = "Lia Marcela",
+                identidad = "0802",
+                carrera = "Diseño Web"
+            };
+
+            Console.WriteLine("Nombre :" + a1.nombre + " Carrera " + a1.carrera);
+
+            a1.carrera = "Diseño Grafico";
+
+            Console.WriteLine("Nombre :" + a1.nombre + " Carrera " + a1.carrera);
+
         }
     }
 }
