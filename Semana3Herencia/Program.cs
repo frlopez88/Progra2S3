@@ -8,7 +8,9 @@ namespace Semana3Herencia
     {
         static void Main(string[] args)
         {
-            Profesor p1 = new Profesor()
+            /*
+             * Semana 3 Sesion 2 Herencia
+             * Profesor p1 = new Profesor()
             {
                 nombre = "Fernando Lopez",
                 identidad = "0801",
@@ -96,7 +98,52 @@ namespace Semana3Herencia
                 Console.WriteLine(x.GetPago());
             });
 
-            Console.WriteLine( "Pago de Empleado "+ e1.nombre + "= " +e1.GetPago());
+            Console.WriteLine( "Pago de Empleado "+ e1.nombre + "= " +e1.GetPago());*/
+
+            // Semana 3 Sesion 3 Polimorfismo
+
+
+            Triangulo t1 = new Triangulo() {
+                ladoa = 4
+            };
+
+            Console.WriteLine("Informacion de Triangulo, "+ t1.ladoa);
+            t1.calcularArea();
+            Console.WriteLine("Area con lado a = "+ t1.area);
+            t1.calcularAreaAltura();
+            Console.WriteLine("Area con altura = " + t1.area);
+
+            t1.calcularPerimetro();
+            Console.WriteLine("Perimetro = " +t1.perimetro);
+
+
+            Cuadro cua1 = new Cuadro() {
+                ladoa = 10,
+                ladob = 5
+            };
+
+            Console.WriteLine("Informacion de Cuadro lado a " + cua1.ladoa
+                            + " lado b "+ cua1.ladob);
+
+            cua1.calcularArea();
+            cua1.calcularPerimetro();
+
+            Console.WriteLine("Area = " + cua1.area + " Perimetro = " + cua1.perimetro);
+
+
+            Circulo cir1 = new Circulo() {
+                radio = 10
+            };
+
+            Console.WriteLine("Informacion de Circulo radio, "+ cir1.radio);
+
+            cir1.calcularArea();
+            cir1.calcularPerimetro();
+
+            Console.WriteLine("Area = " + cir1.area + " Perimetro = " + cir1.perimetro);
+
+
+
 
         }
     }
