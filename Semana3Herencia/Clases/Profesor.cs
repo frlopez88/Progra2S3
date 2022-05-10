@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Semana3Herencia.Clases
 {
-    public class Profesor : Persona
+    public class Profesor : Empleado
     {
 
         public int horas_trabajadas { get; set; }
@@ -19,6 +19,10 @@ namespace Semana3Herencia.Clases
 
         }
 
+        public override double GetPago() {
+
+            return salario * horas_trabajadas;
+        }
 
 
     }

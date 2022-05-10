@@ -1,0 +1,35 @@
+﻿-- Sesion 2
+Resolvimos la Tarea
+Herencia
+
+
+--Sesion 3
+Resolviendo Ejercicios de POO
+Polimorfismo
+
+La Herencia funciona para definir tipos
+
+Pueden Existir Varios Tipos de Personas en un Sistema
+
+1) Docente
+2) Alumno 
+3) Empleado de Planta
+
+Un Docente y Empleado de Planta puede Ganar Dinero,
+Los Docentes Ganan 100 lempiras por horas laboradas en el mes
+Los empleados de planta ganan un salario fijo
+
+
+--- Ejemplo de Figuras Geometricas
+
+1) Triangulo(Equilatero Es el Triangulo que los 3 Lados miden lo mimos) :
+        Propieadades:        Ladoa, Altura, Area,Permitro.
+        Metodos:            CalcularArea, CalcularPerimetro.
+2) Circulo:
+        Propieadades:       radio, Area, Perimetro.
+        Metodos:            CalcularArea, CalcularPerimetro.
+3) Cuadros (Iguales):
+        Propieadades:       Ladoa, Area, Perimetro.
+        Metodos:            CalcularArea, CalcularPerimetro.
+
+ 

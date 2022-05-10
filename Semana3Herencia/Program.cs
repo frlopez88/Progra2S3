@@ -13,7 +13,8 @@ namespace Semana3Herencia
                 nombre = "Fernando Lopez",
                 identidad = "0801",
                 carrera = "Diseño Web",
-                peso = 190
+                peso = 190,
+                salario = 100
 
             };
 
@@ -21,7 +22,16 @@ namespace Semana3Herencia
                 nombre = "Carlo Ancheloti",
                 identidad = "0803",
                 carrera = "Futbol",
-                peso = 200
+                peso = 200,
+                salario = 100 
+            };
+
+            Empleado e1 = new Empleado()
+            {
+                nombre = "Luis Lopez",
+                identidad="0901",
+                carrera = "Psicologia",
+                salario = 10000
             };
 
             Alumno a1 = new Alumno() {
@@ -82,7 +92,11 @@ namespace Semana3Herencia
             {
                 Console.WriteLine(x.Saludar());
                 Console.WriteLine(x.peso);
+
+                Console.WriteLine(x.GetPago());
             });
+
+            Console.WriteLine( "Pago de Empleado "+ e1.nombre + "= " +e1.GetPago());
 
         }
     }
