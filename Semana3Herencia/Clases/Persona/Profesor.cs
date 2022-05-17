@@ -4,7 +4,7 @@ namespace Semana3Herencia.Clases
     public class Profesor : Empleado
     {
 
-        public int horas_trabajadas { get; set; }
+        public int horas_trabajadas { get; set; } = 0;
 
         public void ImpartirClases(int HorasTrabajadas) {
 

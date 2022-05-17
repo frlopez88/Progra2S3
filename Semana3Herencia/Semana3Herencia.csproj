@@ -7,8 +7,12 @@
 
   <ItemGroup>
     <None Remove="Clases\" />
+    <None Remove="Clases\Persona\" />
+    <None Remove="Clases\Figura Geometrica\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Clases\" />
+    <Folder Include="Clases\Persona\" />
+    <Folder Include="Clases\Figura Geometrica\" />
   </ItemGroup>
 </Project>

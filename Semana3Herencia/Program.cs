@@ -8,142 +8,151 @@ namespace Semana3Herencia
     {
         static void Main(string[] args)
         {
-            /*
-             * Semana 3 Sesion 2 Herencia
-             * Profesor p1 = new Profesor()
-            {
-                nombre = "Fernando Lopez",
-                identidad = "0801",
-                carrera = "Diseño Web",
-                peso = 190,
-                salario = 100
-
-            };
-
-            Profesor p2 = new Profesor() {
-                nombre = "Carlo Ancheloti",
-                identidad = "0803",
-                carrera = "Futbol",
-                peso = 200,
-                salario = 100 
-            };
-
-            Empleado e1 = new Empleado()
-            {
-                nombre = "Luis Lopez",
-                identidad="0901",
-                carrera = "Psicologia",
-                salario = 10000
-            };
-
-            Alumno a1 = new Alumno() {
-                nombre = "Lia Marcela",
-                identidad = "0802",
-                carrera = "Diseño Web"
-            };
-
-            Alumno a2 = new Alumno()
-            {
-                nombre = "Hector Miranda",
-                identidad = "0804",
-                carrera = "Diseño Web"
-            };
-
-            Alumno a3 = new Alumno()
-            {
-                nombre = "Claudia Sanchez",
-                identidad = "0805",
-                carrera = "Diseño Web"
-            };
-
-            Alumno a4 = new Alumno()
-            {
-                nombre = "Israel Martinez",
-                identidad = "0806",
-                carrera = "Diseño Web"
-            };
-
-            for (int i = 0; i < 8; i++) {
-                a2.FaltarClase();
-            }
-
-            p1.ImpartirClases(10);
-            p2.ImpartirClases(10);
-
-            p1.comer(2);
-            p2.comer(3);
-
+            bool bandera = true;
+            int opcion;
             List<Alumno> La = new List<Alumno>();
             List<Profesor> Lp = new List<Profesor>();
 
-            La.Add(a1);
-            La.Add(a2);
-            La.Add(a3);
-            La.Add(a4);
 
-            Lp.Add(p1);
-            Lp.Add(p2);
-
-            La.ForEach(delegate (Alumno x)
+            while (bandera == true)
             {
-                Console.WriteLine(x.GetReporteDerecho());
 
-            });
+                Console.WriteLine(GetMenu());
+                opcion = int.Parse(Console.ReadLine());
 
-            Lp.ForEach(delegate (Profesor x)
-            {
-                Console.WriteLine(x.Saludar());
-                Console.WriteLine(x.peso);
+                switch (opcion) {
 
-                Console.WriteLine(x.GetPago());
-            });
+                    case 1:
+                        // Creacion de Alumnos
+                        string n;
+                        string id;
+                        string c;
+                        double p;
 
-            Console.WriteLine( "Pago de Empleado "+ e1.nombre + "= " +e1.GetPago());*/
+                        Console.WriteLine("Ingrese Nombre: ");
+                        n = Console.ReadLine();
 
-            // Semana 3 Sesion 3 Polimorfismo
+                        Console.WriteLine("Ingrese Identidad: ");
+                        id = Console.ReadLine();
+
+                        Console.WriteLine("Ingrese Carrera: ");
+                        c = Console.ReadLine();
+
+                        Console.WriteLine("Ingrese Peso de Alumno: ");
+                        p = Double.Parse(Console.ReadLine());
+
+                        Alumno a1 = new Alumno() {
+                            nombre = n,
+                            identidad = id,
+                            carrera = c,
+                            peso = p
+                        };
+
+                        La.Add(a1);
+
+                        break;
+                    case 2:
+                        // Creacion de Profesores
+                        string n1;
+                        string id1;
+                        string c1;
+                        double p1;
+
+                        Console.WriteLine("Ingrese Nombre: ");
+                        n1 = Console.ReadLine();
+
+                        Console.WriteLine("Ingrese Identidad: ");
+                        id1 = Console.ReadLine();
+
+                        Console.WriteLine("Ingrese Carrera: ");
+                        c1 = Console.ReadLine();
+
+                        Console.WriteLine("Ingrese Peso de Alumno: ");
+                        p1 = Double.Parse(Console.ReadLine());
+
+                        Profesor prf1 = new Profesor() {
+                            nombre = n1,
+                            identidad = id1,
+                            carrera = c1,
+                            peso = p1
+                        };
+
+                        Lp.Add(prf1);
+
+                        break;
+                    case 3:
+                        // Registrar Falta de Alumno
+                        string IdBusqueda;
+
+                        Console.WriteLine("Ingrese Identidad de Alumno a Registrar Falta");
+                        IdBusqueda = Console.ReadLine();
+
+                        La.ForEach(delegate (Alumno x)  {
+
+                            if (IdBusqueda == x.identidad)
+                            {
+                                x.FaltarClase();
+                            }
+                            else {
+
+                                Console.WriteLine("Identidad no encontrada");
+                            }
 
 
-            Triangulo t1 = new Triangulo() {
-                ladoa = 4
-            };
+	                    });
 
-            Console.WriteLine("Informacion de Triangulo, "+ t1.ladoa);
-            t1.calcularArea();
-            Console.WriteLine("Area con lado a = "+ t1.area);
-            t1.calcularAreaAltura();
-            Console.WriteLine("Area con altura = " + t1.area);
+                        break;
+                    case 4:
+                        Console.WriteLine("Ingrese Identidad del Docente a Registrar Horas de Trabajo");
+                        String IdBusqueda2 = Console.ReadLine();
 
-            t1.calcularPerimetro();
-            Console.WriteLine("Perimetro = " +t1.perimetro);
+                        Console.WriteLine("Ingrese Horas de Trabajo");
+                        int Horas = int.Parse(Console.ReadLine());
 
+                        Lp.ForEach( delegate (Profesor x) {
 
-            Cuadro cua1 = new Cuadro() {
-                ladoa = 10,
-                ladob = 5
-            };
+                            if (IdBusqueda2 == x.identidad) {
+                                x.ImpartirClases(Horas);
+                            }
+                            else
+                            {
 
-            Console.WriteLine("Informacion de Cuadro lado a " + cua1.ladoa
-                            + " lado b "+ cua1.ladob);
-
-            cua1.calcularArea();
-            cua1.calcularPerimetro();
-
-            Console.WriteLine("Area = " + cua1.area + " Perimetro = " + cua1.perimetro);
+                                Console.WriteLine("Identidad no encontrada");
+                            }
 
 
-            Circulo cir1 = new Circulo() {
-                radio = 10
-            };
+	                        });
 
-            Console.WriteLine("Informacion de Circulo radio, "+ cir1.radio);
+                        break;
+                    case 5:
+                        break;
+                    case 6:
+                        break;
+                    default:
+                        break;
 
-            cir1.calcularArea();
-            cir1.calcularPerimetro();
+                }
 
-            Console.WriteLine("Area = " + cir1.area + " Perimetro = " + cir1.perimetro);
+                // Es importante identificar si cierra el ciclo
+                // cambiando la bandera
+
+            }
 
 
 
+
+        }
+
+
+        public static string GetMenu()
+        {
+
+            return "1. Crear Alumnos " + "\n"
+                   + "2. Crear Docentes " + "\n"
+                   + "3. Registrar Falta de Alumnos " + "\n"
+                   + "4. Registrar Horas Clase Docente" + "\n"
+                   + "5. Generar Reporte de Alumnos "+"\n"
+                   + "6. Salir";
 
         }
     }
