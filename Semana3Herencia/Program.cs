@@ -125,8 +125,18 @@ namespace Semana3Herencia
 
                         break;
                     case 5:
+
+                        La.ForEach(delegate (Alumno x)
+                        {
+
+                            Console.WriteLine(x.GetReporteDerecho());
+
+                        });
+
                         break;
                     case 6:
+
+                        bandera = false;
                         break;
                     default:
                         break;
