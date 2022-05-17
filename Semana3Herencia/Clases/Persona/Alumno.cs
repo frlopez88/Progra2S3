@@ -21,10 +21,10 @@ namespace Semana3Herencia.Clases
 
             if (esta_con_derecho == true)
             {
-                return "El alumno "+nombre+" tiene derecho a examen";
+                return "El alumno "+nombre+" tiene derecho a examen, tiene "+faltas+ " faltas";
             }
             else {
-                return "El alumno "+nombre+" no tiene derecho a examen";
+                return "El alumno "+nombre+ " no tiene derecho a examen, tiene " + faltas + " faltas";
             }
         }
 

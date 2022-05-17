@@ -136,6 +136,9 @@ namespace Semana3Herencia
                         break;
                     case 6:
 
+                        
+                        break;
+                    case 7:
                         bandera = false;
                         break;
                     default:
@@ -162,7 +165,8 @@ namespace Semana3Herencia
                    + "3. Registrar Falta de Alumnos " + "\n"
                    + "4. Registrar Horas Clase Docente" + "\n"
                    + "5. Generar Reporte de Alumnos "+"\n"
-                   + "6. Salir";
+                   + "6. Generar Reporte de Docentes "+ "\n"
+                   + "7. Salir";
 
         }
     }
