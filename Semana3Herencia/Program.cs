@@ -10,8 +10,9 @@ namespace Semana3Herencia
         {
             bool bandera = true;
             int opcion;
-            List<Alumno> La = new List<Alumno>();
-            List<Profesor> Lp = new List<Profesor>();
+            List<Cuadro> Lcuadro = new List<Cuadro>();
+            List<Circulo> Lcirculo = new List<Circulo>();
+            List<Triangulo> Ltriangulo = new List<Triangulo>();
 
 
             while (bandera == true)
@@ -23,120 +24,88 @@ namespace Semana3Herencia
                 switch (opcion) {
 
                     case 1:
-                        // Creacion de Alumnos
-                        string n;
-                        string id;
-                        string c;
-                        double p;
+                        // Creacion de Circulos
+                        double data_radio;
 
-                        Console.WriteLine("Ingrese Nombre: ");
-                        n = Console.ReadLine();
+                        Console.WriteLine("Ingrese el radio: ");
+                        data_radio = Double.Parse(Console.ReadLine());                        
 
-                        Console.WriteLine("Ingrese Identidad: ");
-                        id = Console.ReadLine();
-
-                        Console.WriteLine("Ingrese Carrera: ");
-                        c = Console.ReadLine();
-
-                        Console.WriteLine("Ingrese Peso de Alumno: ");
-                        p = Double.Parse(Console.ReadLine());
-
-                        Alumno a1 = new Alumno() {
-                            nombre = n,
-                            identidad = id,
-                            carrera = c,
-                            peso = p
+                        Circulo a1 = new Circulo() {
+                            radio = data_radio
                         };
 
-                        La.Add(a1);
+                        Lcirculo.Add(a1);
 
                         break;
                     case 2:
-                        // Creacion de Profesores
-                        string n1;
-                        string id1;
-                        string c1;
-                        double p1;
+                        // Creacion de Cuadros
+                        double data_ladoa;
+                        double data_ladob;
 
-                        Console.WriteLine("Ingrese Nombre: ");
-                        n1 = Console.ReadLine();
+                        Console.WriteLine("Ingrese Lado a: ");
+                        data_ladoa = Double.Parse(Console.ReadLine());
 
-                        Console.WriteLine("Ingrese Identidad: ");
-                        id1 = Console.ReadLine();
+                        Console.WriteLine("Ingrese Lado b: ");
+                        data_ladob = Double.Parse(Console.ReadLine());
 
-                        Console.WriteLine("Ingrese Carrera: ");
-                        c1 = Console.ReadLine();
 
-                        Console.WriteLine("Ingrese Peso de Alumno: ");
-                        p1 = Double.Parse(Console.ReadLine());
 
-                        Profesor prf1 = new Profesor() {
-                            nombre = n1,
-                            identidad = id1,
-                            carrera = c1,
-                            peso = p1
+                        Cuadro c1 = new Cuadro() {
+                            ladoa = data_ladoa,
+                            ladob = data_ladob
                         };
 
-                        Lp.Add(prf1);
+                        Lcuadro.Add(c1);
 
                         break;
                     case 3:
-                        // Registrar Falta de Alumno
-                        string IdBusqueda;
+                        // Crear Triangulos Equila
+                        double data_t_ladoa;
 
-                        Console.WriteLine("Ingrese Identidad de Alumno a Registrar Falta");
-                        IdBusqueda = Console.ReadLine();
+                        Console.WriteLine("Ingrese Lado A");
+                        data_t_ladoa = Double.Parse(Console.ReadLine());
 
-                        La.ForEach(delegate (Alumno x)  {
+                        Triangulo t1 = new Triangulo() {
+                            ladoa = data_t_ladoa
+                        };
 
-                            if (IdBusqueda == x.identidad)
-                            {
-                                x.FaltarClase();
-                            }
-                            else {
-
-                                Console.WriteLine("Identidad no encontrada");
-                            }
-
-
-	                    });
+                        Ltriangulo.Add(t1);
 
                         break;
                     case 4:
-                        Console.WriteLine("Ingrese Identidad del Docente a Registrar Horas de Trabajo");
-                        String IdBusqueda2 = Console.ReadLine();
+                        // Reporte de Area de Circulos
 
-                        Console.WriteLine("Ingrese Horas de Trabajo");
-                        int Horas = int.Parse(Console.ReadLine());
+                        Lcirculo.ForEach( delegate (Circulo x) {
 
-                        Lp.ForEach( delegate (Profesor x) {
-
-                            if (IdBusqueda2 == x.identidad) {
-                                x.ImpartirClases(Horas);
-                            }
-                            else
-                            {
-
-                                Console.WriteLine("Identidad no encontrada");
-                            }
-
+                            x.calcularArea();
+                            Console.WriteLine(x.area);
 
 	                        });
 
                         break;
                     case 5:
 
-                        La.ForEach(delegate (Alumno x)
-                        {
+                        // Reporte de Area de Cuadros
 
-                            Console.WriteLine(x.GetReporteDerecho());
+                        Lcuadro.ForEach(delegate (Cuadro x) {
+
+                            x.calcularArea();
+                            Console.WriteLine(x.area);
 
                         });
 
                         break;
                     case 6:
 
-                        
+                        // Reporte de Area de Triangulos
+
+                        Ltriangulo.ForEach(delegate (Triangulo x) {
+
+                            x.calcularArea();
+                            Console.WriteLine(x.area);
+
+                        });
+
                         break;
                     case 7:
                         bandera = false;
@@ -160,12 +129,12 @@ namespace Semana3Herencia
         public static string GetMenu()
         {
 
-            return "1. Crear Alumnos " + "\n"
-                   + "2. Crear Docentes " + "\n"
-                   + "3. Registrar Falta de Alumnos " + "\n"
-                   + "4. Registrar Horas Clase Docente" + "\n"
-                   + "5. Generar Reporte de Alumnos "+"\n"
-                   + "6. Generar Reporte de Docentes "+ "\n"
+            return "1. Crear Circulo " + "\n"
+                   + "2. Crear Cuadrado " + "\n"
+                   + "3. Crear Triangulo " + "\n"
+                   + "4. Reporte Area Circulos" + "\n"
+                   + "5. Reporte Area Cuadrados " + "\n"
+                   + "6. Reporte Area Triangulos " + "\n"
                    + "7. Salir";
 
         }
